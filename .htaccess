@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /TEST/
+
+# external redirect from actual URL to pretty one
+# RewriteCond %{THE_REQUEST} /main\?email=([^\s&]+)&id=([^\s&]+) [NC]
+# RewriteRule ^ main\%3F%1? [R=302,L,NE]
+
+RewriteCond %{THE_REQUEST} /main\?([^\s&]+)=([^\s&]+)&aa=([^\s&]+) [NC]
+RewriteRule ^ main\%3Fid\%3D%1\%26aa\%3D%2? [R=302,L,NE]
